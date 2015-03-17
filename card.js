@@ -64,7 +64,7 @@ function generateDisplay(hand) {
     var div = document.createElement("div");
     div.setAttribute("id", card.id);
     div.classList.add("card");
-    div.style.backgroundImage = "url('cardimages/redback.png')";
+    div.style.backgroundImage = "url('cardimages/RedBack.png')";
     document.getElementById("cardHolder").appendChild(div);
   }
 }
@@ -112,8 +112,8 @@ function cardCheck() {
 
 // Flip the cards back if user has picked incorrectly.
 function resetCard (pick1, pick2) {
-  pick1.style.backgroundImage = "url('cardimages/redback.png')";
-  pick2.style.backgroundImage = "url('cardimages/redback.png')";
+  pick1.style.backgroundImage = "url('cardimages/RedBack.png')";
+  pick2.style.backgroundImage = "url('cardimages/RedBack.png')";
   isDisabled = false;
 }
 
