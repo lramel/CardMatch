@@ -1,28 +1,31 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Card Match Game</title>
-    <style>
-    body {
-        margin: auto;
-        width: 560px;
-    }
+<head>
+  <meta charset="utf-8">
+  <title>Card Match Game</title>
+  <style>
+  body {
+    margin: auto;
+    width: 560px;
+  }
 
-    #cardHolder div {
-        width: 120px;
-        height: 162px;
-        display: inline-block;
-        margin: 5px 5px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-    </style>
-	</head>
+  #cardHolder div {
+    width: 120px;
+    height: 162px;
+    display: inline-block;
+    margin: 5px 5px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  </style>
+</head>
 
-	<body>
-    <p>Number of Guesses:</p><p id="guessCounter"></p>
-        <div id="cardHolder"></div>
-		<script src="card.js"></script>
-	</body>
+<body>
+  <p>Number of Guesses:</p><p id="guessCounter"></p>
+  <form>
+    <input type="button" id="newGameButton" value="New Game">
+  </form>
+  <div id="cardHolder"></div>
+  <script src="card.js"></script>
+</body>
 </html>

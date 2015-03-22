@@ -117,25 +117,48 @@ function resetCard (pick1, pick2) {
   isDisabled = false;
 }
 
-//Build the game!
-var deck = [];
-createDeck();
-var pick1 = null;
-var pick2 = null;
-var guesses = 0;
-var isDisabled = false;
+// Build the game!
+function newGame() {
+  cardHolder.innerHTML = "";
+  guessCounter.innerHTML = 0;
+  deck = [];
+  createDeck();
+  pick1 = null;
+  pick2 = null;
+  guesses = 0;
+  isDisabled = false;
 
-var hand = createHand();
-var hand2 = hand.concat([]);
-var fullHand = shuffle(hand.concat(hand2));
+  hand = createHand();
+  hand2 = hand.concat([]);
+  fullHand = shuffle(hand.concat(hand2));
 
-generateDisplay(fullHand);
+  generateDisplay(fullHand);
+}
 
-var el = document.getElementById("cardHolder");
-el.addEventListener("click", onClick, false);
 
+var deck;
+var pick1;
+var pick2;
+var guesses;
+var isDisabled;
+
+var hand;
+var hand2;
+var fullHand;
+
+// Add an event handler to the cardHolder div
+var cardHolder = document.getElementById("cardHolder");
+cardHolder.addEventListener("click", onClick, false);
+
+// Add an event handler to the new game button
+var newGameButton = document.getElementById("newGameButton");
+newGameButton.addEventListener("click", newGame, false);
+
+// Set the guess counter to the number of guesses made by the player
 var guessCounter = document.getElementById("guessCounter");
 guessCounter.innerHTML = guesses;
 
+// Start the first game
+window.onload = newGame;
 
 // Created by Lewis Ramel
