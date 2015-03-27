@@ -96,7 +96,12 @@ function cardCheck() {
       pick1.classList.remove("card");
       pick2.classList.remove("card");
       guesses++;
+      correctAnswers++;
 
+      if (correctAnswers === 8) {
+        alert("Congratulations you have completed the game in " + guesses + " guesses!");
+        newGame();
+      }
     } else {
       // Show the cards for 1 second before flipping them back
       setTimeout(resetCard.bind(null, pick1, pick2), 1000);
@@ -127,6 +132,7 @@ function newGame() {
   pick2 = null;
   guesses = 0;
   isDisabled = false;
+  correctAnswers = 0;
 
   hand = createHand();
   hand2 = hand.concat([]);
@@ -141,6 +147,7 @@ var pick1;
 var pick2;
 var guesses;
 var isDisabled;
+var correctAnswers;
 
 var hand;
 var hand2;
